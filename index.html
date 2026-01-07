@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Dr. Ricardo Landívar Córdova | Médico Internista Diabetólogo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Variables de color y estilos globales */
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --light-color: #f8f9fa;
+            --dark-color: #202124;
+            --gray-color: #5f6368;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--gray-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title-center {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0d62d9;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #2e8b47;
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 200px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), url('https://placehold.co/600x400/1a73e8/white?text=Consultorio+Medical+Center') center/cover no-repeat;
+            padding: 180px 0 100px;
+            margin-top: 80px;
+        }
+        
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .doctor-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .specialty-badge {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 15px 0;
+        }
+        
+        .experience-badge {
+            display: inline-block;
+            background-color: #6daf71;
+            color: #202124;
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Sobre el Doctor */
+        .about-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .education-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .education-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .education-list li i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        /* Enfermedades Tratadas */
+        .diseases {
+            background-color: var(--light-color);
+        }
+        
+        .diseases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .disease-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .disease-icon {
+            background-color: rgba(26, 115, 232, 0.1);
+            color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Procedimientos */
+        .procedures-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .procedures-list {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .procedure-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .procedure-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .procedure-icon {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+        
+        .equipment {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .equipment-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        /* Consejos */
+        .advice {
+            background-color: var(--light-color);
+        }
+        
+        .advice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .advice-card {
+            text-align: center;
+            padding: 40px 30px;
+        }
+        
+        .advice-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Contacto */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .info-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #1da851;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .whatsapp-button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Mapa Container */
+        .map-container {
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            display: block;
+            border: none;
+            width: 100%;
+            height: 400px;
+        }
+        
+        .map-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 0 0 8px 8px;
+            margin-top: -5px;
+        }
+        
+        .map-features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        
+        .map-feature {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .map-feature i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content, .hero-image {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .map-features {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .map-container iframe {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .map-container iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <!-- ============================================= -->
+                <!-- FOTO 1: LOGO (LÍNEA 196) - REEMPLAZAR AQUÍ -->
+                <!-- ============================================= -->
+                <img src="https://i.ibb.co/jPD80Phm/Chat-GPT-Image-7-ene-2026-11-49-45-a-m.png" width="300" height="auto" alt="logo" style="position: absolute; top: 10px; left: 150px;">
+            </div>
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre el Dr.</a></li>
+                    <li class="nav-item"><a href="#enfermedades" class="nav-link">Enfermedades</a></li>
+                    <li class="nav-item"><a href="#procedimientos" class="nav-link">Procedimientos</a></li>
+                    <li class="nav-item"><a href="#consejos" class="nav-link">Consejos</a></li>
+                    <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Dr. Ricardo Landívar Córdova</h1>
+                <div class="specialty-badge">Médico Internista Diabetólogo <span class="experience-badge">Con 20 años de experiencia</span></div>
+                <p>Especialista en diagnóstico y tratamiento de enfermedades metabólicas y cardiovasculares con 20 años de experiencia. Atención personalizada y seguimiento integral para mejorar su calidad de vida.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Pedir Cita</a>
+                    <a href="tel:+59177224692" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> Urgencias: 77224692</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- ============================================= -->
+                <!-- FOTO 2: FOTO PRINCIPAL (LÍNEA 253) - REEMPLAZAR AQUÍ -->
+                <!-- ============================================= -->
+                <img src="https://i.ibb.co/hx9kjBBH/IMG-20251215-WA0013.jpg" alt="Dr. Ricardo Landívar Córdova" class="doctor-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre el Dr. Landívar -->
+    <section id="sobre-mi">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>Sobre el Dr. Landívar</h2>
+                <p>Profesional altamente calificado con <strong>20 años de experiencia</strong> y formación internacional</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- ============================================= -->
+                    <!-- FOTO 3: FOTO PROFESIONAL (LÍNEA 281) - REEMPLAZAR AQUÍ -->
+                    <!-- ============================================= -->
+                    <img src="https://i.ibb.co/Ldvg4VYs/IMG-20251215-WA0019.jpg" height="350" alt="Dr. Landívar en consultorio" class="about-img">
+                </div>
+                <div class="about-content">
+                    <h3>Experiencia y Formación Académica</h3>
+                    <ul class="education-list">
+                        <li><i class="fas fa-graduation-cap"></i> Universidad de Chile (Escuela de Postgrado)</li>
+                        <li><i class="fas fa-graduation-cap"></i> Facultad de Medicina (Universitat de Barcelona CLINÍC)</li>
+                        <li><i class="fas fa-graduation-cap"></i> BECA ALAD - Universidad de CHILE</li>
+                        <li><i class="fas fa-certificate"></i> Certificado de especialista - 7Mo Foro Cardiometabólico</li>
+                        <li><i class="fas fa-certificate"></i> Agencia Española de Cooperación Internacional, Ministerio de Desarrollo Humano y Fundación Echevarne</li>
+                    </ul>
+                    
+                    <h3>Compromiso con la Salud Integral</h3>
+                    <p>El Dr. Landívar se dedica al diagnóstico y tratamiento integral de enfermedades metabólicas, con especial enfoque en diabetes, hipertensión y prevención cardiovascular. Su abordaje combina la medicina basada en evidencia con atención personalizada para cada paciente.</p>
+                    
+                    <p>Con <strong>20 años de experiencia</strong> y formación en prestigiosas instituciones nacionales e internacionales, mantiene actualización constante en los últimos avances de la diabetología y medicina interna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enfermedades Tratadas -->
+    <section class="diseases" id="enfermedades">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>Enfermedades que Tratamos</h2>
+                <p>Especializados en el manejo integral de condiciones metabólicas y cardiovasculares</p>
+            </div>
+            
+            <div class="diseases-grid">
+                <div class="disease-card card">
+                    <div class="disease-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div>
+                        <!-- ============================================= -->
+                        <!-- MODIFICACIÓN 1: DIABETES ACTUALIZADA (LÍNEA 321) -->
+                        <!-- ============================================= -->
+                        <h3>Diagnóstico y control de Diabetes Mellitus y otros grupos</h3>
+                        <p>Manejo integral de diabetes tipo 1, tipo 2, gestacional, LADA, MODY y otros grupos específicos. Enfoque en control glucémico y prevención de complicaciones.</p>
+                    </div>
+                </div>
+                
+                <div class="disease-card card">
+                    <div class="disease-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div>
+                        <h3>Manejo de Hipertensión Arterial</h3>
+                        <p>Evaluación, diagnóstico y tratamiento personalizado de la hipertensión para reducir riesgo cardiovascular.</p>
+                    </div>
+                </div>
+                
+                <div class="disease-card card">
+                    <div class="disease-icon">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <div>
+                        <h3>Control de Dislipidemias y Obesidad</h3>
+                        <p>Abordaje integral del sobrepeso, obesidad y alteraciones lipídicas para mejorar salud metabólica.</p>
+                    </div>
+                </div>
+                
+                <div class="disease-card card">
+                    <div class="disease-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div>
+                        <h3>Prevención de enfermedades Cardiovasculares</h3>
+                        <p>Evaluación de riesgo y estrategias personalizadas para prevenir infartos, ACV y otras enfermedades cardiovasculares.</p>
+                    </div>
+                </div>
+                
+                <div class="disease-card card">
+                    <div class="disease-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div>
+                        <h3>Atención Integral de enfermedades Metabólicas</h3>
+                        <p>Manejo de síndrome metabólico, resistencia a la insulina y otras condiciones relacionadas.</p>
+                    </div>
+                </div>
+                
+                <div class="disease-card card">
+                    <div class="disease-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Asesoramiento en Nutrición y estilo de vida Saludable</h3>
+                        <p>Recomendaciones personalizadas de alimentación y actividad física para mejorar salud general.</p>
+                    </div>
+                </div>
+                
+                <div class="disease-card card">
+                    <div class="disease-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div>
+                        <h3>Enfermedades respiratorias y renales</h3>
+                        <p>Manejo de condiciones respiratorias y renales asociadas a enfermedades metabólicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Procedimientos y Equipamiento -->
+    <section id="procedimientos">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>Procedimientos y Equipamiento</h2>
+                <p>Tecnología de vanguardia para un diagnóstico preciso y tratamiento efectivo</p>
+            </div>
+            
+            <div class="procedures-container">
+                <div class="procedures-list">
+                    <h3>Intervenciones y Evaluaciones</h3>
+                    
+                    <div class="procedure-item">
+                        <div class="procedure-icon">
+                            <i class="fas fa-file-medical-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Evaluación Cardiovascular Completa</h4>
+                            <p>Análisis integral de riesgo cardiovascular con estudios especializados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="procedure-item">
+                        <div class="procedure-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <div>
+                            <h4>Monitoreo Glucémico Continuo</h4>
+                            <p>Tecnología avanzada para seguimiento preciso de niveles de glucosa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="procedure-item">
+                        <div class="procedure-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4>Estudios Metabólicos Especializados</h4>
+                            <p>Evaluación completa del metabolismo y gasto energético.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="procedure-item">
+                        <div class="procedure-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div>
+                            <h4>Planificación Terapéutica Personalizada</h4>
+                            <p>Desarrollo de estrategias de tratamiento adaptadas a cada paciente.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="equipment">
+                    <h3>Equipamiento Especializado</h3>
+                    <!-- ============================================= -->
+                    <!-- FOTO 4: EQUIPO MÉDICO (LÍNEA 414) - REEMPLAZAR AQUÍ -->
+                    <!-- ============================================= -->
+                    <img src="https://i.ibb.co/Mk6ywRGk/IMG-20251215-WA0018.jpg" alt="Equipo médico especializado" class="equipment-img">
+                    <p>Nuestro consultorio cuenta con tecnología de última generación para el diagnóstico y seguimiento de condiciones metabólicas y cardiovasculares, incluyendo:</p>
+                    <ul class="education-list">
+                        <li><i class="fas fa-check-circle"></i> Monitorización ambulatoria de presión arterial</li>
+                        <li><i class="fas fa-check-circle"></i> Ecocardiograma portátil</li>
+                        <li><i class="fas fa-check-circle"></i> Analizador de composición corporal</li>
+                        <li><i class="fas fa-check-circle"></i> Sistemas de monitoreo glucémico continuo</li>
+                    </ul>
+                    
+                    <!-- ============================================= -->
+                    <!-- MODIFICACIÓN 2: CLÍNICA LOS ÁLAMOS (LÍNEA 428) -->
+                    <!-- ============================================= -->
+                    <div class="card" style="margin-top: 30px; background-color: #f0f7ff; border-left: 4px solid #1a73e8;">
+                        <h4><i class="fas fa-hospital" style="color: #1a73e8;"></i> Clínica de Hospitalización</h4>
+                        <p>Para pacientes que requieren hospitalización o cirugía, trabajamos en conjunto con <strong>Clínica Los Álamos</strong>, centro de referencia en La Paz con:</p>
+                        <ul class="education-list">
+                            <li><i class="fas fa-bed"></i> Habitaciones privadas y equipadas</li>
+                            <li><i class="fas fa-user-md"></i> Equipo quirúrgico especializado</li>
+                            <li><i class="fas fa-heartbeat"></i> Monitoreo cardiológico 24/7</li>
+                            <li><i class="fas fa-ambulance"></i> Servicio de emergencias</li>
+                        </ul>
+                        <p style="margin-top: 10px;"><strong>Coordinamos toda la hospitalización</strong> para que su experiencia médica sea integral y sin complicaciones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consejos Cardiovasculares -->
+    <section class="advice" id="consejos">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>Consejos para la Salud Cardiovascular</h2>
+                <p>Recomendaciones basadas en evidencia científica para cuidar tu corazón</p>
+            </div>
+            
+            <div class="advice-grid">
+                <div class="advice-card card">
+                    <div class="advice-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Controla tu presión arterial</h3>
+                    <p>"Controla tu presión arterial regularmente después de los 40 años"</p>
+                </div>
+                
+                <div class="advice-card card">
+                    <div class="advice-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Ejercicio regular</h3>
+                    <p>"Realiza al menos 150 minutos de ejercicio aeróbico semanal"</p>
+                </div>
+                
+                <div class="advice-card card">
+                    <div class="advice-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Alimentación saludable</h3>
+                    <p>"Mantén una dieta baja en sal y grasas saturadas"</p>
+                </div>
+                
+                <div class="advice-card card">
+                    <div class="advice-icon">
+                        <i class="fas fa-smoking-ban"></i>
+                    </div>
+                    <h3>Evita hábitos nocivos</h3>
+                    <p>"Evita el tabaco y limita el consumo de alcohol"</p>
+                </div>
+                
+                <div class="advice-card card">
+                    <div class="advice-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Manejo del estrés</h3>
+                    <p>"Controla el estrés con técnicas de relajación"</p>
+                </div>
+                
+                <div class="advice-card card">
+                    <div class="advice-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Chequeos regulares</h3>
+                    <p>"Chequeos anuales si tienes antecedentes familiares de cardiopatías"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <div class="container">
+            <div class="section-title-center">
+                <h2>Contacto y Citas</h2>
+                <p>Agenda tu consulta o contáctanos para urgencias</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h3>Solicitar Cita Médica</h3>
+                    <!-- ============================================= -->
+                    <!-- FORMULARIO CON NUEVO CORREO (LÍNEA 482) -->
+                    <!-- ============================================= -->
+                    <form id="appointmentForm" action="https://formsubmit.co/medicalcenter043@gmail.com" method="POST">
+                        <!-- Campo oculto para asunto personalizado -->
+                        <input type="hidden" name="_subject" value="🩺 NUEVA CITA - Dr. Landívar - Medical Center">
+                        
+                        <!-- Evitar spam (dejar como está) -->
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <!-- Redirección después del envío -->
+                        <input type="hidden" name="_next" value="https://consultoriodrlandivar.com/gracias.html">
+                        
+                        <!-- Template bonito -->
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <!-- Campos del formulario -->
+                        <div class="form-group">
+                            <input type="text" name="Nombre" class="form-control" placeholder="Nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" name="Teléfono" class="form-control" placeholder="Teléfono" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" name="Email" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select name="Motivo de consulta" class="form-control" required>
+                                <option value="" disabled selected>Motivo de consulta</option>
+                                <option value="Diabetes Mellitus">Diabetes Mellitus y otros grupos</option>
+                                <option value="Hipertensión Arterial">Hipertensión Arterial</option>
+                                <option value="Dislipidemia/Obesidad">Dislipidemia/Obesidad</option>
+                                <option value="Prevención Cardiovascular">Prevención Cardiovascular</option>
+                                <option value="Enfermedades Respiratorias/Renales">Enfermedades Respiratorias/Renales</option>
+                                <option value="Asesoramiento Nutricional">Asesoramiento Nutricional</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fecha" style="display:block; margin-bottom:8px; color:#555;">Fecha preferida para la cita:</label>
+                            <input type="date" id="fecha" name="Fecha preferida" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <!-- ============================================= -->
+                            <!-- HORARIOS ACTUALIZADOS (LÍNEA 522) -->
+                            <!-- ============================================= -->
+                            <select name="Horario preferido" class="form-control" required>
+                                <option value="" disabled selected>Horario preferido</option>
+                                <option value="Lunes 17:00">Lunes 17:00</option>
+                                <option value="Lunes 17:30">Lunes 17:30</option>
+                                <option value="Lunes 18:00">Lunes 18:00</option>
+                                <option value="Lunes 18:30">Lunes 18:30</option>
+                                <option value="Martes 17:00">Martes 17:00</option>
+                                <option value="Martes 17:30">Martes 17:30</option>
+                                <option value="Martes 18:00">Martes 18:00</option>
+                                <option value="Martes 18:30">Martes 18:30</option>
+                                <option value="Miércoles 17:00">Miércoles 17:00</option>
+                                <option value="Miércoles 17:30">Miércoles 17:30</option>
+                                <option value="Miércoles 18:00">Miércoles 18:00</option>
+                                <option value="Miércoles 18:30">Miércoles 18:30</option>
+                                <option value="Jueves 17:00">Jueves 17:00</option>
+                                <option value="Jueves 17:30">Jueves 17:30</option>
+                                <option value="Jueves 18:00">Jueves 18:00</option>
+                                <option value="Jueves 18:30">Jueves 18:30</option>
+                                <option value="Cualquier horario disponible">Cualquier horario disponible</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="Síntomas o información adicional" class="form-control" rows="3" 
+                                      placeholder="Síntomas, medicamentos actuales, antecedentes importantes..."></textarea>
+                        </div>
+                        
+                        <!-- Checkbox de consentimiento (importante para privacidad médica) -->
+                        <div class="form-group" style="margin-top: 20px;">
+                            <label style="display: flex; align-items: flex-start; cursor: pointer;">
+                                <input type="checkbox" name="consentimiento" required style="margin-right: 10px; margin-top: 3px;">
+                                <span style="font-size: 0.9em;">
+                                    Autorizo el tratamiento de mis datos personales conforme a la Ley 548 de Protección de Datos Personales de Bolivia. 
+                                    Entiendo que esta información será usada únicamente para fines médicos.
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i> Solicitar Cita
+                        </button>
+                        
+                        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+                            <i class="fas fa-shield-alt"></i> Tus datos están protegidos y no serán compartidos con terceros.
+                        </p>
+                    </form>
+                    
+                    <div id="confirmationMessage" style="display:none; margin-top:25px; padding:20px; background:#d4edda; color:#155724; border-radius:5px; border-left:4px solid #155724;">
+                        <h4 style="margin-top:0; color:#155724;">
+                            <i class="fas fa-check-circle"></i> ¡Cita Solicitada Exitosamente!
+                        </h4>
+                        <p style="margin-bottom:0;">
+                            Hemos recibido tu solicitud. Te contactaremos dentro de <strong>24 horas</strong> para confirmar fecha y hora exacta.<br>
+                            Para <strong>urgencias cardíacas</strong>, llama al <strong>77224692</strong> (24/7).
+                        </p>
+                    </div>
+                    
+                    <!-- Botón de WhatsApp -->
+                    <div style="margin-top: 30px; text-align: center;">
+                        <p style="color: #666; margin-bottom: 10px;">O también puedes:</p>
+                        <a href="https://wa.me/59170672641?text=Hola%20Dr.%20Landívar,%20quisiera%20solicitar%20una%20cita%20médica.%20Mi%20nombre%20es:" 
+                           class="whatsapp-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Solicitar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div>
+                            <h4>Dr. Ricardo Landívar Córdova</h4>
+                            <p>Médico Internista Diabetólogo <span style="color: #fbbc04; font-weight: 600;"> Con 20 años de experiencia</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Dirección del Consultorio</h4>
+                            <p>c. Nicaragua, Nro. 2093, Edif. Medical Center, 2do Piso esq. República Dominicana. LA PAZ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Teléfono de Contacto</h4>
+                            <p>+591 70672641</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <!-- ============================================= -->
+                            <!-- NUEVO CORREO EN CONTACTO (LÍNEA 590) -->
+                            <!-- ============================================= -->
+                            <h4>Correo Electrónico</h4>
+                            <p>medicalcenter043@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <!-- ============================================= -->
+                            <!-- HORARIOS ACTUALIZADOS EN CONTACTO (LÍNEA 599) -->
+                            <!-- ============================================= -->
+                            <h4>Horarios de Atención</h4>
+                            <p><strong>Lunes a Jueves:</strong> 17:00 PM - 19:00 PM</p>
+                            <p><strong>Horarios disponibles:</strong> 17:00, 17:30, 18:00, 18:30</p>
+                            <p><strong>Urgencias cardíacas:</strong> 24/7 Cel: 77224692</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div>
+                            <!-- ============================================= -->
+                            <!-- MODIFICACIÓN 3: INFO CLÍNICA EN CONTACTO (LÍNEA 610) -->
+                            <!-- ============================================= -->
+                            <h4>Clínica de Hospitalización</h4>
+                            <p><strong>Clínica Los Álamos</strong> - Centro de referencia para hospitalización y cirugías. Coordinamos toda la hospitalización para pacientes que lo requieran.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- MAPA REAL DEL MEDICAL CENTER -->
+                    <div class="map-container">
+                        <h4 style="margin-bottom: 15px; color: var(--primary-color);">
+                            <i class="fas fa-map-marked-alt"></i> Ubicación del Consultorio
+                        </h4>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.4432120123847!2d-68.12057532564017!3d-16.503707440819245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f2104f7637771%3A0x6daeaade7e76c2bb!2sMEDICAL%20CENTER!5e0!3m2!1ses-419!2sbo!4v1765579403768!5m2!1ses-419!2sbo" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Consultorio Dr. Ricardo Landívar Córdova - Medical Center">
+                        </iframe>
+                        
+                        <div class="map-info">
+                            <p style="margin: 0 0 10px 0; color: #555; font-size: 0.95em;">
+                                <i class="fas fa-info-circle" style="color: var(--primary-color);"></i>
+                                <strong>Instrucciones:</strong> Edificio Medical Center, 2do piso. Entre calles Nicaragua y República Dominicana.
+                            </p>
+                            
+                            <div class="map-features">
+                                <div class="map-feature">
+                                    <i class="fas fa-car"></i> Estacionamiento disponible
+                                </div>
+                                <div class="map-feature">
+                                    <i class="fas fa-elevator"></i> Ascensores
+                                </div>
+                                <div class="map-feature">
+                                    <i class="fas fa-wheelchair"></i> Acceso discapacitados
+                                </div>
+                                <div class="map-feature">
+                                    <i class="fas fa-building"></i> 2do Piso
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Consultorio Dr. Landívar</h3>
+                    <p>Especialistas en medicina interna, diabetología y prevención cardiovascular. <strong>20 años de experiencia</strong> con atención personalizada y los más altos estándares de calidad.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre-mi">Sobre el Dr.</a></li>
+                        <li><a href="#enfermedades">Enfermedades</a></li>
+                        <li><a href="#procedimientos">Procedimientos</a></li>
+                        <li><a href="#consejos">Consejos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contacto de Emergencia</h3>
+                    <p><i class="fas fa-phone-alt"></i> Urgencias: 77224692</p>
+                    <p><i class="fas fa-clock"></i> Disponible 24/7 para urgencias cardíacas</p>
+                    <p><i class="fas fa-map-marker-alt"></i> c. Nicaragua, Nro. 2093, Edif. Medical Center, 2do Piso, LA PAZ</p>
+                    <p><i class="fas fa-hospital"></i> Hospitalización: Clínica Los Álamos</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Consultorio Dr. Ricardo Landívar Córdova. Todos los derechos reservados.</p>
+                <p style="font-size: 0.8em; margin-top: 10px;">La información en este sitio web es solo para fines informativos y no reemplaza la consulta médica presencial.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.querySelector('i').classList.toggle('fa-bars');
+            mobileToggle.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Manejo del formulario con FormSubmit
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar fecha (no puede ser anterior a hoy)
+            const fechaInput = document.getElementById('fecha');
+            const hoy = new Date().toISOString().split('T')[0];
+            if (fechaInput.value < hoy) {
+                alert('Por favor, selecciona una fecha futura');
+                fechaInput.focus();
+                return;
+            }
+            
+            // Mostrar mensaje de "enviando"
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+            
+            // Enviar formulario
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // Mostrar mensaje de confirmación
+                document.getElementById('confirmationMessage').style.display = 'block';
+                this.reset();
+                
+                // Desplazar suavemente para mostrar el mensaje
+                document.getElementById('confirmationMessage').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Restaurar botón después de 5 segundos
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar el formulario. Por favor, intenta nuevamente o llama al 70672641.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // Establecer fecha mínima como hoy
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            const fechaInput = document.getElementById('fecha');
+            if (fechaInput) {
+                fechaInput.min = today;
+                
+                // Establecer una fecha sugerida (3 días después)
+                const suggestedDate = new Date();
+                suggestedDate.setDate(suggestedDate.getDate() + 3);
+                fechaInput.value = suggestedDate.toISOString().split('T')[0];
+            }
+        });
+        
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
